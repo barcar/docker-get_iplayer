@@ -6,8 +6,8 @@ services:
       context: .
       dockerfile: Dockerfile
       args:
-        PUID: 1000 # id -u
-        PGID: 100  # id -g
+        PUID: 0 # id -u
+        PGID: 0  # id -g
     volumes:
       - iplayer_data:/output
     ports:
