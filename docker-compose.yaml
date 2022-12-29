@@ -9,6 +9,9 @@ services:
         PUID: 1000 # id -u
         PGID: 100  # id -g
     volumes:
-      - /destination/on/host:/output
+      - iplayer_data:/output
     ports:
       - "1935:1935"
+volumes:
+  iplayer_data:
+    external: true
