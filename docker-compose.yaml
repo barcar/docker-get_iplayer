@@ -8,10 +8,16 @@ services:
       args:
         PUID: 0 # id -u
         PGID: 0  # id -g
+    pull_policy: build
+    container_name: get_iplayer
+    environment:
+      - TZ=Europe/London
     volumes:
       - iplayer_data:/output
     ports:
       - "1935:1935"
+    network_mode: host
+    restart: unless-stopped
 volumes:
   iplayer_data:
     external: true
